@@ -16,7 +16,7 @@ export default function Work() {
         <div className="intro-bottom">
           <p>
             Different brands. Shared ambition.
-            <br />The people and organizations we work with.
+            <br />Clients, past and present.
           </p>
           <span className="eyebrow">Strategy / Creative / Experiences</span>
         </div>

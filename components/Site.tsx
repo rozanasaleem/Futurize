@@ -134,11 +134,10 @@ export function ProjectGrid({ items = projects }: { items?: Project[] }) {
   return <div className="project-grid">{items.map(p => <ProjectCard key={p.slug} project={p} index={projects.findIndex(item => item.slug === p.slug)} />)}</div>;
 }
 export function WorkArchive() {
-  return <div className="client-archive-groups">{([
-    ["current", "Selected clients", "Brands we work with."],
-    ["history", "Previous relationships", "Selected brands from our history."],
-    ["events", "Events & experiences", "Selected event and production entries."],
-  ] as const).map(([group, title, description]) => <section key={group} className="client-archive-group"><h2>{title}</h2><p>{description}</p><ProjectGrid items={projects.filter(p => p.group === group)} /></section>)}</div>;
+  return <div className="client-archive-groups">
+    <section className="client-archive-group"><h2>Clients, past &amp; present.</h2><p>Selected brands we work with and have worked with.</p><ProjectGrid items={projects.filter(p => p.group !== "events")} /></section>
+    <section className="client-archive-group"><h2>Events &amp; experiences</h2><p>Selected event and production entries.</p><ProjectGrid items={projects.filter(p => p.group === "events")} /></section>
+  </div>;
 }
 export function Services() {
   const artTypes = ["eyes", "burst", "window", "orbit", "spark", "steps"] as const;
@@ -171,7 +170,7 @@ export function ContactBand() {
         </span>
       </Link>
       <div className="contact-bottom">
-        <a href="mailto:Ahmad@futurize.agency">Ahmad@futurize.agency ↗</a>
+        <a href="https://www.instagram.com/futurize_marketing/" target="_blank" rel="noopener noreferrer">Instagram / @futurize_marketing ↗</a>
         <span>Al Balou, Ramallah, Palestine</span>
       </div>
     </section>

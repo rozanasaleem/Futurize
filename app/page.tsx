@@ -5,7 +5,7 @@ import { projects } from "@/lib/content";
 
 export default function Home() {
   const current = projects.filter(p => p.group === "current");
-  const history = projects.filter(p => p.group === "history");
+  const clients = projects.filter(p => p.group !== "events");
   const featured = current.slice(0, 3);
   return <>
     <GraphicHero />
@@ -14,14 +14,8 @@ export default function Home() {
       <div><h2>One team.<br />The whole picture.</h2><p>We are Futurize, a multidisciplinary agency based in Ramallah, Palestine. We bring marketing, branding, digital development, creative production and business thinking together.</p><Link href="/studio/" className="text-link">Get to know us <span>↗</span></Link></div>
     </section>
     <section className="home-clients section-pad" id="clients">
-      <div className="editorial-heading"><span className="eyebrow">01 / In good company</span><h2>Our clients</h2><Link href="/work/" className="text-link">Meet all clients ↗</Link></div>
-      <div className="client-logo-grid">{current.map(p => <Link key={p.slug} href={`/work/${p.slug}/`} className={p.logo ? "client-logo-tile" : "client-logo-tile client-name-tile"}>
-        {p.logo ? <img src={`/assets/${p.logo}`} alt={p.name} width="240" height="120" /> : <span>{p.name}</span>}
-      </Link>)}</div>
-    </section>
-    <section className="home-history section-pad">
-      <div className="editorial-heading"><span className="eyebrow">Our history</span><h2>Past connections.</h2><p>Selected previous<br />client relationships.</p></div>
-      <div className="client-logo-grid history-logo-grid">{history.map(p => <Link key={p.slug} href={`/work/${p.slug}/`} className={`client-logo-tile ${["q-center", "bekdash"].includes(p.slug) ? "logo-on-charcoal" : ""}`}>
+      <div className="editorial-heading"><span className="eyebrow">01 / In good company</span><h2>Our clients</h2><div className="client-heading-note"><p>Clients, past &amp; present.</p><Link href="/work/" className="text-link">Meet all clients ↗</Link></div></div>
+      <div className="client-logo-grid">{clients.map(p => <Link key={p.slug} href={`/work/${p.slug}/`} className={p.logo ? "client-logo-tile" : "client-logo-tile client-name-tile"}>
         {p.logo ? <img src={`/assets/${p.logo}`} alt={p.name} width="240" height="120" /> : <span>{p.name}</span>}
       </Link>)}</div>
     </section>

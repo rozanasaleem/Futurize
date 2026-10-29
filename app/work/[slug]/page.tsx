@@ -12,10 +12,9 @@ export default async function ClientPage({params}: {params: Promise<{slug: strin
   const {slug} = await params;
   const index = projects.findIndex(p => p.slug === slug);
   if(index < 0) notFound();
-  const p = projects[index], next = projects[(index + 1) % projects.length];
+  const p = projects[index];
   return <>
     <section className="case-intro page-intro"><Link href="/work/" className="eyebrow back-link">← All clients</Link><div className="case-label eyebrow"><span>F / {String(index + 1).padStart(2,"0")}</span><span>{p.group === "history" ? "Previous relationship" : p.group === "events" ? "Event / Experience" : "Selected client"}</span></div><h1>{p.name}<span className="yellow-dot">.</span></h1></section>
     <section className="client-detail section-pad"><ClientIdentity project={p} large /><p className="client-coming-soon">Project story coming soon.</p></section>
-    <Link className="next-project section-pad" href={`/work/${next.slug}/`}><span className="eyebrow">Next client / Keep exploring</span><div><h2>{next.name}</h2><span aria-hidden="true">↗</span></div></Link>
   </>;
 }

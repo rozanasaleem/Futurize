@@ -8,7 +8,7 @@ The homepage takes inspiration from the Shora Creative Agency reference: a drama
 
 ## Content rules
 
-The active client roster is taken from the owner-supplied `DownloadablePortfolio.pptx.pdf`. Current clients, previous relationships, and event entries are presented as separate groups. Complete client logos were extracted from the supplied PDF; entries without suitable logos use typeset names. See `review/client-review.md` for the roster and content boundaries. Client detail pages display identity and a coming-soon message until the project stories are authored.
+The active client roster is taken from the owner-supplied `DownloadablePortfolio.pptx.pdf`. Current and past clients share one grid labelled “Clients, past & present.” Event entries remain separate. Complete client logos were extracted from the supplied PDF; entries without suitable logos use typeset names. See `review/client-review.md` for the roster and content boundaries. Client detail pages display identity and a coming-soon message until the project stories are authored.
 
 The homepage uses original generated yellow ribbon artwork (`public/assets/futurize-ribbon.webp`) as agency art, a client grid, large identity previews, editorial service rows, and an approach card grid. No reel is shown until a suitable video is supplied.
 
